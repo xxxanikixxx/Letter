@@ -1,0 +1,674 @@
+
+
+body {
+    background-color : #130d4a;
+    /* color : #c2c1e0; */
+    color : #fef7f6;
+    /* font-family : serif; */
+    font-family: 'Sawarabi Mincho', sans-serif;
+}
+
+.my_font {
+    font-size : 1.3rem;
+
+}
+
+
+
+.my_title {
+    font-size : 9.5rem;
+    /* font-size : 30vmin; */
+    text-align : center;
+    margin-bottom : -35px;
+}
+.my_title_sub {
+    font-size : 1.55rem;
+    /* font-size : 6vmin; */
+    text-align : center;
+    margin-bottom : 30px;
+}
+
+#selectAction {
+    text-align : center;
+}
+
+
+#loginButtonDiv {
+    margin : 5px auto;
+    text-align : center;
+}
+
+.myButton {
+    cursor: pointer;
+    border-radius : 100vh;
+    border : 2px solid #fef7f6;
+    padding : 0px 2.5rem;
+    background-color : #130d4a;
+    color : #fef7f6;
+    margin : 5px;
+}
+.aBox {
+    margin : 5px;
+}
+
+.myButton:hover {
+    border : 2px solid #f9c26f;
+    color : #f9c26f;
+}
+
+.myButton:focus {
+    border : 2px solid #f9c26f;
+    color : #f9c26f;
+}
+
+
+td {
+    padding : 5px;
+}
+
+
+
+:root {
+    --title-color : #c2c1e0;
+    --sub-title-color : #e73738;
+/*
+  #4cb679;
+  #f9c26f;
+  #e73738;
+  #c2c1e0;
+  */
+    
+}
+
+.my_title {
+    color : var(--title-color);
+}
+
+#login_table {
+    margin : auto;
+}
+
+.letter {
+    color : var(--sub-title-color);
+}
+
+p {
+    margin : 0px;
+    padding : 2px;
+}
+
+.displayNone {
+    display : none;
+    
+}
+
+#login {
+    margin: 0;
+    /* background: yellow; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+    
+}
+
+#titleBox {
+/* border : 4px dashed #f9c26f; */
+/* padding : 5px; */
+}
+
+#loginBox {
+/* width : calc(100% - 28px); */
+/* max-width : 600px; */
+    
+/* margin : auto; */
+
+/* border : 4px dashed #4cb679; */
+/* padding : 5px; */
+
+}
+
+
+
+#mkRoom {
+    display: none;
+
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+#mkRoomStatus {
+    display : flex;
+    justify-content : space-between;
+    margin-bottom : 20px;
+}
+
+#mainRoomTeacher {
+    display: none;
+    width : 100%;
+    height : 100%;
+}
+
+#sideContents {
+    height : 100%;
+    width : 426px;
+}
+
+
+
+#mainContents {
+    display : flex;
+    width : calc(100% - 454px - 284px);
+    height : calc(100vh - 50px);
+    padding : 5px;
+    margin : 5px;
+    border : 4px solid #4b386b;
+    overflow-x : auto; 
+}
+
+#chatContents {
+    width : 256px;
+    height : calc(100vh - 50px);
+    padding : 5px;
+    margin : 5px;
+    border : 4px solid #4b386b;
+
+    overflow-y : auto;
+    
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    scrollbar-width: none;       /* Firefox 対応 */
+}
+#chatContents::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+    display:none;
+}
+
+
+
+
+#sideUp {
+    /* display : flex; */
+    /* justify-content : space-between; */
+
+    width : calc(100% - 28px);
+    /* height : calc(180px - 28px); */
+    padding : 5px;
+    margin : 5px;
+    margin-bottom : 10px;
+    border : 4px solid #4b386b;
+}
+.sideUpBox {
+    display : flex;
+    justify-content : space-between;
+    align-items : center;
+
+}
+
+/* #sideUpBox a,div { */
+/*     align-self : flex-start; */
+/* } */
+
+#selectToggle {
+    width : calc(100% - 28px);
+    height : calc(100% - 208px);
+    padding : 5px;
+    margin : 5px;
+    border : 4px solid #4b386b;
+    overflow : auto;
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    scrollbar-width: none;       /* Firefox 対応 */
+}
+
+#selectToggle::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+    display:none;
+}
+
+
+
+.toggle {
+    /* filter: grayscale(100%); */
+    filter: brightness(30%);
+}
+
+.nameArea {
+    display : none;
+    height : calc(100% - 30px);
+    width :  180px;
+    margin : 5px;
+    padding : 5px;
+
+    text-align : center;
+    white-space : nowrap;
+}
+
+.imgMini {
+    width : 100px;
+    margin : auto;
+}
+
+
+.nameList {
+    display : flex;
+    flex-direction: column;
+    align-content : flex-start;
+    width : calc(100% - 14px);
+    height : calc(100% - 109px - 25px);
+    padding : 5px;
+    overflow : auto;
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    scrollbar-width: none;       /* Firefox 対応 */
+
+    text-align : left;
+}
+.nameList::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+    display:none;
+}
+
+/* #nameList_iconHand { */
+/*     height : calc(100% - 109px - 25px - 200px); */
+/* } */
+
+
+.selectNum {
+    margin : 5px;
+    height : 25px;
+}
+
+
+#nameList_iconLogin {
+    border : 1px solid #c2c1e0;
+}
+#nameList_iconTA {
+    border : 1px solid #c2c1e0;
+}
+
+#nameList_iconOk {
+    border : 1px solid #ff7f7f;
+}
+
+#nameList_iconNg {
+    border : 1px solid #7fffff;
+}
+
+#nameList_iconHand {
+    border : 1px solid #7fff7f;
+}
+
+#nameList_iconNo1 {
+    border : 1px solid #ff7fbf;
+}
+
+#nameList_iconNo2 {
+    border : 1px solid #bf7fff;
+}
+
+#nameList_iconNo3 {
+    border : 1px solid #7fbfff;
+}
+
+#nameList_iconNo4 {
+    border : 1px solid #7fffbf;
+}
+
+#nameList_iconNo5 {
+    border : 1px solid #bfff7f;
+}
+
+#nameList_iconNo6 {
+    border : 1px solid #ffbf7f;
+}
+
+#nameList_iconNo7 {
+    border : 1px solid #ff7fff;
+}
+
+#nameList_iconNo8 {
+    border : 1px solid #7f7fff;
+}
+
+#nameList_iconNo9 {
+    border : 1px solid #ffff7f;
+}
+
+.chatTime {
+    padding : 10px 0px 0px 5px;
+    color : 9d9dcd;
+}
+
+.chatMsg {
+    padding : 0px 0px 0px 20px;
+    overflow-wrap: break-word;    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#mainRoom {
+    display : none;
+    height : 100%;
+}
+
+
+
+#mainRoomStatus {
+    
+    border : 4px solid #4b386b;
+    margin : 5px;
+    margin-bottom : 10px;
+    padding : 5px;
+    width : calc(100% - 28px);
+}
+#mainRoomStatus1 {
+    display : flex;
+    justify-content : space-between;
+}
+#mainRoomStatus2 {
+    display : flex;
+    justify-content : space-between;
+}
+
+
+#roomOutButton {
+    grid-row : 1/2;
+    grid-column : 2/3;
+}
+.mainRoomUser {
+    display : flex;
+    align-items:center;
+    grid-row : 1/2;
+    grid-column : 1/2;
+}
+#mainRoomName {
+    grid-row : 2/3;
+    grid-column : 1/2;
+}
+
+#sendMessage {
+    border : 4px solid #4b386b;
+    width : calc(100% - 28px);
+    margin : 5px;
+    margin-bottom : 10px;
+    padding : 5px;
+
+}
+#sendMessageText {
+    width : calc(100% - 8px);
+    margin : 5px;
+    padding : 2px;
+    border-width : 2px;
+}
+
+#sendMessageButtonBox {
+    margin : 5px;
+    text-align : right;
+}
+
+#sendMessageButton {
+
+}
+
+
+#iconList {
+    display : flex;
+    flex-wrap : wrap;
+    justify-content : space-around;
+    width : calc(100% - 28px);
+    height : calc(100% - 28px);
+    margin : 5px;
+    padding : 5px;
+    overflow : auto;
+    -ms-overflow-style: none;    /* IE, Edge 対応 */
+    scrollbar-width: none;       /* Firefox 対応 */
+
+    border : 4px solid #4b386b;
+}
+
+#iconList::-webkit-scrollbar {  /* Chrome, Safari 対応 */
+    display:none;
+}
+
+
+.icon {
+    width : 128px;
+    height : 128px;
+    margine : 5px;
+    display : none;
+    filter: brightness(30%);
+}
+
+
+
+#userName {
+    /* background-color : #433d7a; */
+    background-color : #130d4a;
+    color : #fef7f6;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    border : unset;
+    width : 290px;
+}
+
+#userName:focus {
+    background-color : white;
+    color : black;
+}
+#userNameTeacher {
+    /* background-color : #433d7a; */
+    background-color : #130d4a;
+    color : #fef7f6;
+    font-family: 'Sawarabi Mincho', sans-serif;
+    border : unset;
+    width : 290px;
+}
+
+#userNameTeacher:focus {
+    background-color : white;
+    color : black;
+}
+
+.enpituIcon {
+    width : 30px;
+    height : 30px;
+    margin : auto 4;
+}
+
+#passwdDiv {
+    background-color : rgba(128,128,128,0.8);
+    position : absolute;
+    top : 0%;
+    left : 0%;
+    width : 100%;
+    height : 100%;
+    display : none;
+}
+#passwdPanel {
+    
+    padding : 30px;
+    background-color : #130d4a;
+    border : 3px;
+    border-color : black;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+    
+}
+
+#TApasswdSetDiv {
+    background-color : rgba(128,128,128,0.8);
+    position : absolute;
+    top : 0%;
+    left : 0%;
+    width : 100%;
+    height : 100%;
+    display : none;
+}
+#TApasswdSetPanel {
+    
+    padding : 30px;
+    background-color : #130d4a;
+    border : 3px;
+    border-color : black;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+    
+}
+
+#TApasswdInDiv {
+    background-color : rgba(128,128,128,0.8);
+    position : absolute;
+    top : 0%;
+    left : 0%;
+    width : 100%;
+    height : 100%;
+    display : none;
+}
+#TApasswdInPanel {
+    
+    padding : 30px;
+    background-color : #130d4a;
+    border : 3px;
+    border-color : black;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+
+#supportStuGetDiv {
+    background-color : rgba(128,128,128,0.8);
+    position : absolute;
+    top : 0%;
+    left : 0%;
+    width : 100%;
+    height : 100%;
+    display : none;
+}
+#supportStuGetPanel {
+    
+    padding : 30px;
+    background-color : #130d4a;
+    border : 3px;
+    border-color : black;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+
+.supportedColor {
+    color : #f9c26f;
+}
+
+
+
+
+.poyoyon3 {
+    animation: poyoyon3 2.5s infinite;
+    opacity: 1;
+}
+@keyframes poyoyon3 {
+    0%, 40% {
+        transform: skew(0deg, 0deg);
+    }
+    5% {
+        transform: skew(5deg, 5deg);
+    }
+    10% {
+        transform: skew(-4deg, -4deg);
+    }
+    15% {
+        transform: skew(3deg, 3deg);
+    }
+    20% {
+        transform: skew(-2deg, -2deg);
+    }
+    25% {
+        transform: skew(1deg, 1deg);
+    }
+    30% {
+        transform: skew(-0.6deg, -0.6deg);
+    }
+    35% {
+        transform: skew(0.3deg, 0.3deg);
+    }
+}
+
+
+
+
+
+
+
+@keyframes anime{
+    0%{
+        transform:scale(1, 1):
+        opacity: 0.3;
+    }
+    90%{
+        transform:scale(2, 2);
+        opacity: 0;
+    }
+    100%{
+        transform:scale(2, 2);
+        opacity: 0;
+    }
+}
+
+.pushButton {
+    position: relative;
+    transition: .2s;
+
+    top: -3px;
+    width: 100px;
+    margin: auto;
+    /* z-index: 2; */
+
+}
+.pushButton:before {
+    content: "";
+    position: absolute;
+    z-index: 10;
+    width: 95px;
+    height: 95px;
+    top: 3px;
+    left: 0;
+    border-radius: 32px;
+    background: #7fff7f;
+    /* border: 1px solid #ff999e; */
+    text-align : center;
+    z-index: -1;
+/* transform: translate3d(0,0,0); */
+    animation: anime .8s ease-out infinite;
+
+}
+
+.pushButton:hover {
+    top: 3px;
+}
