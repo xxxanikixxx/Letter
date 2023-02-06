@@ -1,0 +1,5 @@
+<Files ~ "^\.(htaccess|htpasswd)|letter\.conf">
+deny from all
+</Files>
+Options -Indexes
+
