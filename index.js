@@ -671,15 +671,29 @@ function copyClipboard(targetRole) {
 
     var targetStr = (targetRole=='s')? "学生用の":
         (targetRole=='t')? "教員用の" : "TA用の";
-        
-    navigator.clipboard.writeText(urlStr).then(() => {
-        /* clipboard successfully set */
-        alert("クリップボードに、"+targetStr+"リンクをコピーしました。");
-    }, () => {
-        /* clipboard write failed */
-    });
-    
 
+
+    let mode = document.getElementById("mode").innerText.replace(/ /g,'').replace(/\n/g,'');
+    
+    if( mode == "https") {
+        navigator.clipboard.writeText(urlStr).then(() => {
+            /* clipboard successfully set */
+            alert("クリップボードに、"+targetStr+"リンクをコピーしました。");
+        }, () => {
+            /* clipboard write failed */
+        });
+    }
+    else {
+        let tmp = document.createElement('input');
+        tmp.setAttribute('type', 'text');
+        document.body.appendChild(tmp);
+        tmp.value = urlStr;
+        tmp.select();
+        document.execCommand('copy');
+        document.body.removeChild(tmp);
+        alert("クリップボードに、"+targetStr+"リンクをコピーしました。");
+    }
+        
 }
 
 
