@@ -140,13 +140,15 @@ wss.on('connection', function connection(ws,req) {
                 else if( action == "intoRoomFS"   &&  role=="n" ) funcIntoRoomFS(ws, d);
                 else if( action == "intoRoomTAFS" &&  role=="n" ) funcIntoRoomTAFS(ws, d);
                 else if( action == "exitRoomFS"   && (role=="s" || role=="TA")) funcExitRoomFS(ws, d);
+                else if( action == "exitRoomFS"   &&  role=="t")  funcDelRoom(ws, d);
                 else if( action == "exitRoomFT"   &&  role=="t" ) funcExitRoomFT(ws, d);
                 else if( action == "selectIconFS" &&  role=="s" ) funcSelectIconFS(ws, d);
                 else if( action == "chatFS"       && (role=="s" || role=="TA") ) funcChatFS(ws, d);
                 else if( action == "nameChangeFS" && (role=="s" || role=="TA" || role=="t") ) funcNameChangeFS(ws, d);
                 else if( action == "supportFTA"   && (role=="TA" || role=="t") ) funcSupportFTA(ws, d);
                 else if( action == "iconReset"    &&  role=="t" ) funcIconReset(ws, d);
-                else if( action == "setWS"        && (role=="s" || role=="TA")   ) funcSetWS(ws, d);
+//                else if( action == "setWS"        && (role=="s" || role=="TA")   ) funcSetWS(ws, d);
+                else if( action == "setWS"    ) funcSetWS(ws, d);
                 else if( action == "getLatestData" && (role=="TA" || role=="t") ) funcGetLatestData(ws, d);
                 else if( action == "pin" ) funcPinPon(ws, d);
             }
@@ -780,8 +782,8 @@ function funcSetWS(ws, d) {
     let role = userList[token]['role'];
     if( role == 's' )
         role = 'students';
-    else if( role == 't' )
-        return;
+    // else if( role == 't' )
+    //     return;
 
 
     if( userList[token]['role'] == 's' ) {
@@ -793,7 +795,8 @@ function funcSetWS(ws, d) {
                    "target":userList[token]['selectedIcon']};
         funcSelectIconFS( ws, msg, true );
     }
-    else if ( userList[token]['role'] == 'TA' ) {
+    else if ( userList[token]['role'] == 'TA'  ||
+              userList[token]['role'] == 't'  ) {
         sendLatestData(token);
     }
     
