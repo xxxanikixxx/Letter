@@ -23,10 +23,10 @@ TA画面
 
 # 導入
 
-webserverとnodejsがインストールされているPCを用意してください。Linux上で動かすのを想定しています。
-webserverはphpが使えるようにしてください。
+ウェブサーバーとnodejsがインストールされているPCを用意してください。Linux上で動かすのを想定しています。
+ウェブサーバーはphpが使えるようにしてください。
 
-webserverのドキュメントルート等のウェブページを作りたい場所で
+ウェブサーバーのドキュメントルート等のウェブページを作りたい場所で
 ```
 git clone https://github.com/xxxanikixxx/Letter.git
 cd Letter
@@ -46,7 +46,6 @@ domain = your.domein.com
 
 ssl_crt = /fullpath/to/your.crt
 ssl_key = /fullpath/to/your.key
-
 ```
 １文字目が`#`の行はコメント行です。`key = value`で設定しますが、`=`の前後にはスペースを入れてください。
 - **mode** 動作をhttpsかhttpで設定。
