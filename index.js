@@ -492,7 +492,7 @@ function open(){
 
     conn.onerror = function(e) {
         console.log("on error!");
-        //alert("エラーが発生しました");
+
     };
 
     conn.onmessage = function(e) {
@@ -533,7 +533,6 @@ function open(){
     conn.onclose = function() {
         console.log("on close!");
 
-        //alert("切断しました");
         setTimeout(open, 2000);
         
     };
@@ -622,7 +621,6 @@ function TApasswdSetOkButton() {
 
     
     msgJson = JSON.stringify(msg);
-    //conn.send(msgJson);
     sendMsg(msgJson);
 }
 
@@ -643,14 +641,12 @@ function TApasswdInOkButton() {
            "TApasswd":document.getElementById('TApasswdInIn').value};
 
     msgJson = JSON.stringify(msg);
-    //conn.send(msgJson);
     sendMsg(msgJson);
 }
 
 
 function delRoomButton() {
     msgJson = JSON.stringify({"action":"delRoom", "token":myToken});
-    //conn.send(msgJson);
     sendMsg(msgJson);
 }
 
@@ -702,7 +698,6 @@ function supportFunc() {
     let msgJson = JSON.stringify( {"action":"supportFTA",
                                    "token":myToken,
                                    "supportCount":supportCount} );
-    //conn.send(msgJson);
     sendMsg(msgJson);
 }
 
@@ -714,7 +709,6 @@ function intoRoomButton() {
     let msgJson = JSON.stringify( {"action":"intoRoomFS",
                                    "roomName":roomName,
                                    "token":myToken } );
-    //conn.send(msgJson);
     sendMsg(msgJson);
 
 }
@@ -776,7 +770,6 @@ function sendChatButton() {
                                    "token":myToken,
                                    "msg":document.getElementById("sendMessageText").value
                                   } );
-    //conn.send(msgJson);
     sendMsg(msgJson);
 }
 
@@ -789,7 +782,6 @@ function addToggleFunction(el) {
             msgJson = JSON.stringify({"action":"iconAllow", "token":myToken, "target":this.id});
         else
             msgJson = JSON.stringify({"action":"iconDeny", "token":myToken, "target":this.id});
-        //conn.send(msgJson);
         sendMsg(msgJson);
 
     });
@@ -826,7 +818,6 @@ function selectNumUpdate() {
 function resetButton() {
     msgJson = JSON.stringify({"action":"iconReset",
                               "token":myToken});
-    //conn.send(msgJson);
     sendMsg(msgJson);
 
     for( let ind in studentList ) {
@@ -848,7 +839,6 @@ function resetButton() {
 function exitRoomButton() {
     let msgJson = JSON.stringify( {"action":"exitRoomFS",
                                    "token":myToken } );
-    //conn.send(msgJson);
     sendMsg(msgJson);
 }
 
@@ -860,7 +850,6 @@ function addRaiseHandEvent(el) {
         let msgJson = JSON.stringify( {"action":"selectIconFS",
                                        "target":target,
                                        "token":myToken} );
-        //conn.send(msgJson);
         sendMsg(msgJson);
     });
 }
@@ -882,7 +871,6 @@ function nameInput(opt="") {
     if( document.getElementById("mainRoomTeacher").style.display != ""   ||
         document.getElementById("mainRoom").style.display != ""   )
         if( conn )
-            //conn.send(msgJson);
             sendMsg(msgJson);
 }
 
@@ -916,16 +904,12 @@ init();
 function pinFunc() {
     let msg = {"action":"pin"};
     let msgJson = JSON.stringify(msg);
-    //conn.send(msgJson);
     sendMsg(msgJson);
 }
 
-//var intervalID = setInterval(pinFunc, 1000 * 60 );
 
 
-window.addEventListener('beforeunload', event => {
+window.onunload = function() {
     if( myToken != "" )
         exitRoomButton();
-    return "";
-
-})
+}
